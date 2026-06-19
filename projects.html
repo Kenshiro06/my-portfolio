@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Projects - Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="projects-style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/jpeg" href="ICON PAGE AKMAL PORFO.jpeg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <!-- Animated Background -->
+    <div class="background-shapes">
+        <div class="shape shape-1"></div>
+        <div class="shape shape-2"></div>
+        <div class="shape shape-3"></div>
+    </div>
+
+    <!-- Floating particles -->
+    <div class="particles" id="particles"></div>
+
+    <!-- Dark Mode Toggle -->
+    <button class="dark-mode-toggle" id="darkModeToggle">
+        <i class="fas fa-moon"></i>
+    </button>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">My Portfolio</div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">
+                    <span class="nav-icon"><i class="fas fa-home"></i></span>
+                    <span class="nav-text">Home</span>
+                    <span class="nav-indicator"></span>
+                </a></li>
+                <li><a href="index.html#about" class="nav-link">
+                    <span class="nav-icon"><i class="fas fa-user"></i></span>
+                    <span class="nav-text">About</span>
+                    <span class="nav-indicator"></span>
+                </a></li>
+                <li><a href="index.html#education" class="nav-link">
+                    <span class="nav-icon"><i class="fas fa-graduation-cap"></i></span>
+                    <span class="nav-text">Education</span>
+                    <span class="nav-indicator"></span>
+                </a></li>
+                <li><a href="index.html#skills" class="nav-link">
+                    <span class="nav-icon"><i class="fas fa-code"></i></span>
+                    <span class="nav-text">Skills</span>
+                    <span class="nav-indicator"></span>
+                </a></li>
+                <li><a href="projects.html" class="nav-link active">
+                    <span class="nav-icon"><i class="fas fa-folder-open"></i></span>
+                    <span class="nav-text">Projects</span>
+                    <span class="nav-indicator"></span>
+                </a></li>
+                <li><a href="index.html#contact" class="nav-link">
+                    <span class="nav-icon"><i class="fas fa-envelope"></i></span>
+                    <span class="nav-text">Contact</span>
+                    <span class="nav-indicator"></span>
+                </a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Projects Hero -->
+    <section class="projects-hero">
+        <div class="container">
+            <div class="hero-badge fade-in"><i class="fas fa-rocket"></i> Featured Work</div>
+            <h1 class="hero-title fade-in">My Projects</h1>
+            <p class="hero-subtitle fade-in">Real-world applications built with passion, precision, and purpose</p>
+            <div class="hero-stats fade-in">
+                <div class="stat-item">
+                    <span class="stat-number">4</span>
+                    <span class="stat-label">Projects</span>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat-item">
+                    <span class="stat-number">7+</span>
+                    <span class="stat-label">Technologies</span>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat-item">
+                    <span class="stat-number">100%</span>
+                    <span class="stat-label">Open Source</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Showcase -->
+    <section class="projects-showcase">
+        <div class="container">
+            <div class="projects-list">
+
+                <!-- Project 1: SenawangBakers -->
+                <div class="project-card fade-in" data-number="01">
+                    <div class="card-glow"></div>
+                    <div class="project-visual">
+                        <div class="project-mockup bakery-mockup">
+                            <div class="mockup-browser">
+                                <div class="browser-bar">
+                                    <span class="dot red"></span>
+                                    <span class="dot yellow"></span>
+                                    <span class="dot green"></span>
+                                    <span class="browser-url">senawangbakers.com</span>
+                                </div>
+                                <div class="browser-content bakery-content">
+                                    <div class="mock-header">🥐 SenawangBakers</div>
+                                    <div class="mock-nav">
+                                        <span>Home</span><span>Menu</span><span>Order</span>
+                                    </div>
+                                    <div class="mock-hero-img">
+                                        <i class="fas fa-birthday-cake"></i>
+                                    </div>
+                                    <div class="mock-text-lines">
+                                        <div class="mock-line wide"></div>
+                                        <div class="mock-line medium"></div>
+                                        <div class="mock-btn">Order Now</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <div class="project-number">01</div>
+                        <div class="project-category"><i class="fas fa-store"></i> Web Application</div>
+                        <h2 class="project-name">SenawangBakers</h2>
+                        <p class="project-desc">
+                            A full-featured bakery e-commerce website built for a local business. Customers can browse
+                            the menu, place orders, and manage their cart — all powered by a PHP backend with a MySQL
+                            database. Product data is served dynamically via JSON, and XAMPP is used for the local
+                            server environment.
+                        </p>
+                        <div class="project-highlights">
+                            <div class="highlight-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Dynamic product catalogue with MySQL</span>
+                            </div>
+                            <div class="highlight-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Online ordering system with PHP backend</span>
+                            </div>
+                            <div class="highlight-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>JSON-driven data management</span>
+                            </div>
+                            <div class="highlight-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Responsive CSS design for all devices</span>
+                            </div>
+                        </div>
+                        <div class="project-tech">
+                            <span class="tech-badge html"><i class="fab fa-html5"></i> HTML</span>
+                            <span class="tech-badge css"><i class="fab fa-css3-alt"></i> CSS</span>
+                            <span class="tech-badge php"><i class="fab fa-php"></i> PHP</span>
+                            <span class="tech-badge db"><i class="fas fa-database"></i> MySQL</span>
+                            <span class="tech-badge json"><i class="fas fa-file-code"></i> JSON</span>
+                            <span class="tech-badge server"><i class="fas fa-server"></i> XAMPP</span>
+                        </div>
+                        <div class="project-actions">
+                            <a href="https://github.com/Kenshiro06/SenawangBakers-Project2" target="_blank" class="btn-primary">
+                                <i class="fab fa-github"></i> View on GitHub
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2: MedAI -->
+                <div class="project-card reverse fade-in" data-number="02">
+                    <div class="card-glow glow-purple"></div>
+                    <div class="project-visual">
+                        <div class="project-mockup medai-mockup">
+                            <div class="mockup-browser">
+                                <div class="browser-bar">
+                                    <span class="dot red"></span>
+                                    <span class="dot yellow"></span>
+                                    <span class="dot green"></span>
+                                    <span class="browser-url">medai-detection.app</span>
+                                </div>
+                                <div class="browser-content medai-content">
+                                    <div class="mock-header ai-header">🧬 MedAI</div>
+                                    <div class="mock-scan-area">
+                                        <div class="scan-circle">
+                                            <i class="fas fa-microscope"></i>
+                                            <div class="scan-ring ring-1"></div>
+                                            <div class="scan-ring ring-2"></div>
+                                            <div class="scan-ring ring-3"></div>
+                                        </div>
+                                    </div>
+                                    <div class="mock-result">
+                                        <div class="result-bar positive"></div>
+                                        <div class="result-bar negative"></div>
+                                        <div class="result-label">Analysis Complete ✓</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <div class="project-number">02</div>
+                        <div class="project-category"><i class="fas fa-brain"></i> AI / Machine Learning</div>
+                        <h2 class="project-name">MedAI — Malaria Detector</h2>
+                        <p class="project-desc">
+                            An intelligent medical web application that uses machine learning to detect malaria
+                            parasites in blood cell images. Users upload microscope images and the Python ML model
+                            analyses them in real-time, returning a diagnosis. Results and patient data are stored
+                            securely in Supabase.
+                        </p>
+                        <div class="project-highlights">
+                            <div class="highlight-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>ML model trained on blood cell datasets</span>
+                            </div>
+                            <div class="highlight-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Real-time image analysis with Python</span>
+                            </div>
+                            <div class="highlight-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Supabase cloud database integration</span>
+                            </div>
+                            <div class="highlight-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Clean diagnostic result dashboard</span>
+                            </div>
+                        </div>
+                        <div class="project-tech">
+                            <span class="tech-badge html"><i class="fab fa-html5"></i> HTML</span>
+                            <span class="tech-badge css"><i class="fab fa-css3-alt"></i> CSS</span>
+                            <span class="tech-badge python"><i class="fab fa-python"></i> Python</span>
+                            <span class="tech-badge json"><i class="fas fa-file-code"></i> JSON</span>
+                            <span class="tech-badge supa"><i class="fas fa-cloud"></i> Supabase</span>
+                            <span class="tech-badge ml"><i class="fas fa-robot"></i> ML</span>
+                        </div>
+                        <div class="project-actions">
+                            <a href="https://medai-usim.vercel.app/" target="_blank" class="btn-secondary btn-purple-outline">
+                                <i class="fas fa-globe"></i> Live Demo
+                            </a>
+                            <a href="https://github.com/Kenshiro06/MedAi-test" target="_blank" class="btn-primary btn-purple">
+                                <i class="fab fa-github"></i> View on GitHub
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3: Jawi Converter -->
+                <div class="project-card fade-in" data-number="03">
+                    <div class="card-glow glow-green"></div>
+                    <div class="project-visual">
+                        <div class="project-mockup jawi-mockup">
+                            <div class="mockup-browser">
+                                <div class="browser-bar">
+                                    <span class="dot red"></span>
+                                    <span class="dot yellow"></span>
+                                    <span class="dot green"></span>
+                                    <span class="browser-url">jawi-kodeks.app</span>
+                                </div>
+                                <div class="browser-content jawi-content">
+                                    <div class="mock-header jawi-header">✍️ Jawi Kodeks</div>
+                                    <div class="jawi-converter-mock">
+                                        <div class="mock-input-box">
+                                            <div class="box-label">Rumi</div>
+                                            <div class="mock-typed">Selamat Datang</div>
+                                        </div>
+                                        <div class="mock-arrow">
+                                            <i class="fas fa-arrow-right"></i>
+                                        </div>
+                                        <div class="mock-output-box">
+                                            <div class="box-label">Jawi</div>
+                                            <div class="mock-jawi-text">سلامت داتڠ</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <div class="project-number">03</div>
+                        <div class="project-category"><i class="fas fa-language"></i> Language Tool</div>
+                        <h2 class="project-name">Jawi Kodeks</h2>
+                        <p class="project-desc">
+                            A web-based language conversion tool that instantly translates Rumi (Latin script) text
+                            into Jawi (Arabic-based script) for the Malay language. Built to help preserve and
+                            promote Jawi writing, this tool is fast, accurate, and easy to use for students,
+                            educators, and everyday users.
+                        </p>
+                        <div class="project-highlights">
+                            <div class="highlight-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Instant Rumi to Jawi conversion</span>
+                            </div>
+                            <div class="highlight-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Supports full Malay vocabulary</span>
+                            </div>
+                            <div class="highlight-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Lightweight, no server required</span>
+                            </div>
+                            <div class="highlight-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Clean and minimal UI</span>
+                            </div>
+                        </div>
+                        <div class="project-tech">
+                            <span class="tech-badge html"><i class="fab fa-html5"></i> HTML</span>
+                            <span class="tech-badge css"><i class="fab fa-css3-alt"></i> CSS</span>
+                            <span class="tech-badge js"><i class="fab fa-js"></i> JavaScript</span>
+                        </div>
+                        <div class="project-actions">
+                            <a href="https://jawi-kodeks.vercel.app/" target="_blank" class="btn-secondary btn-green-outline">
+                                <i class="fas fa-globe"></i> Live Demo
+                            </a>
+                            <a href="https://github.com/Kenshiro06/jawi-kodeks" target="_blank" class="btn-primary btn-green">
+                                <i class="fab fa-github"></i> View on GitHub
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 4: n8n Automation Workflows -->
+                <div class="project-card reverse fade-in" data-number="04">
+                    <div class="card-glow glow-orange"></div>
+                    <div class="project-visual">
+                        <div class="project-mockup n8n-mockup">
+                            <div class="mockup-browser">
+                                <div class="browser-bar">
+                                    <span class="dot red"></span>
+                                    <span class="dot yellow"></span>
+                                    <span class="dot green"></span>
+                                    <span class="browser-url">n8n-workflows.app</span>
+                                </div>
+                                <div class="browser-content n8n-content">
+                                    <div class="mock-header n8n-header">⚡ n8n Automation Suite</div>
+                                    <div class="n8n-workflow-mock">
+                                        <div class="workflow-node node-1">
+                                            <i class="fas fa-language"></i>
+                                            <span>Jawi Converter</span>
+                                        </div>
+                                        <div class="workflow-arrow">→</div>
+                                        <div class="workflow-node node-2">
+                                            <i class="fas fa-shield-alt"></i>
+                                            <span>Halal Verify</span>
+                                        </div>
+                                        <div class="workflow-arrow">→</div>
+                                        <div class="workflow-node node-3">
+                                            <i class="fas fa-globe"></i>
+                                            <span>Arab Translator</span>
+                                        </div>
+                                    </div>
+                                    <div class="workflow-status">
+                                        <div class="status-indicator active"></div>
+                                        <span class="status-text">3 Workflows Active</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <div class="project-number">04</div>
+                        <div class="project-category"><i class="fas fa-network-wired"></i> Workflow Automation</div>
+                        <h2 class="project-name">n8n Automation Suite</h2>
+                        <p class="project-desc">
+                            A collection of intelligent automation workflows built with n8n, designed to simplify
+                            complex tasks for the Muslim community. Includes a Jawi text converter workflow, an
+                            automated halal logo verification system, and an Arabic food ingredient translator that
+                            helps users understand product contents instantly.
+                        </p>
+                        <div class="project-highlights">
+                            <div class="highlight-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Automated Jawi text conversion pipeline</span>
+                            </div>
+                            <div class="highlight-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Halal logo detection and verification system</span>
+                            </div>
+                            <div class="highlight-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Arabic ingredient translator for food products</span>
+                            </div>
+                            <div class="highlight-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Serverless, event-driven architecture</span>
+                            </div>
+                        </div>
+                        <div class="project-tech">
+                            <span class="tech-badge n8n"><i class="fas fa-cogs"></i> n8n</span>
+                            <span class="tech-badge js"><i class="fab fa-js"></i> JavaScript</span>
+                            <span class="tech-badge api"><i class="fas fa-plug"></i> API Integration</span>
+                            <span class="tech-badge json"><i class="fas fa-file-code"></i> JSON</span>
+                            <span class="tech-badge webhook"><i class="fas fa-bolt"></i> Webhooks</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Back to Home -->
+    <section class="back-section">
+        <div class="container">
+            <a href="index.html" class="back-button glow-button">
+                <i class="fas fa-arrow-left button-icon"></i>
+                <span class="button-text">Back to Home</span>
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; Akmal Danish Portfolio. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Generate floating particles
+        const container = document.getElementById('particles');
+        for (let i = 0; i < 20; i++) {
+            const p = document.createElement('div');
+            p.className = 'particle';
+            p.style.left = Math.random() * 100 + 'vw';
+            p.style.animationDelay = Math.random() * 10 + 's';
+            p.style.animationDuration = (8 + Math.random() * 12) + 's';
+            p.style.width = p.style.height = (4 + Math.random() * 6) + 'px';
+            container.appendChild(p);
+        }
+    </script>
+</body>
+
+</html>

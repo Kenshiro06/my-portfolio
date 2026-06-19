@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Biodata - Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="icon" type="image/jpeg" href="ICON PAGE AKMAL PORFO.jpeg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <!-- Animated Background -->
+    <div class="background-shapes">
+        <div class="shape shape-1"></div>
+        <div class="shape shape-2"></div>
+        <div class="shape shape-3"></div>
+    </div>
+
+    <!-- Dark Mode Toggle -->
+    <button class="dark-mode-toggle" id="darkModeToggle">
+        <i class="fas fa-moon"></i>
+    </button>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">My Portfolio</div>
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link">
+                        <span class="nav-icon"><i class="fas fa-home"></i></span>
+                        <span class="nav-text">Home</span>
+                        <span class="nav-indicator"></span>
+                    </a></li>
+                <li><a href="#about" class="nav-link">
+                        <span class="nav-icon"><i class="fas fa-user"></i></span>
+                        <span class="nav-text">About</span>
+                        <span class="nav-indicator"></span>
+                    </a></li>
+                <li><a href="#education" class="nav-link">
+                        <span class="nav-icon"><i class="fas fa-graduation-cap"></i></span>
+                        <span class="nav-text">Education</span>
+                        <span class="nav-indicator"></span>
+                    </a></li>
+                <li><a href="#skills" class="nav-link">
+                        <span class="nav-icon"><i class="fas fa-code"></i></span>
+                        <span class="nav-text">Skills</span>
+                        <span class="nav-indicator"></span>
+                    </a></li>
+                <li><a href="#projects" class="nav-link">
+                        <span class="nav-icon"><i class="fas fa-folder-open"></i></span>
+                        <span class="nav-text">Projects</span>
+                        <span class="nav-indicator"></span>
+                    </a></li>
+                <li><a href="#contact" class="nav-link">
+                        <span class="nav-icon"><i class="fas fa-envelope"></i></span>
+                        <span class="nav-text">Contact</span>
+                        <span class="nav-indicator"></span>
+                    </a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
+        <div class="container">
+            <div class="hero-content fade-in">
+                <div class="profile-card-container" id="profile-container">
+                    <canvas id="lanyard-canvas" width="600" height="800"></canvas>
+                    <div class="profile-card glass-effect" id="profile-card">
+                        <div class="badge-holder-clip">
+                            <div class="clip-loop"></div>
+                        </div>
+                        <div class="card-shine"></div>
+                        <div class="profile-image-wrapper">
+                            <img src="ICON PAGE AKMAL PORFO.jpeg" alt="Muhammad Akmal Danish" class="profile-image">
+                            <div class="profile-ring"></div>
+                        </div>
+                        <h1 class="profile-name">MUHAMMAD AKMAL DANISH BIN MOHD ZAMRI</h1>
+                        <p class="profile-title">Exploring AI & Machine Learning,Programming and Web Development</p>
+                        <div class="social-links">
+                            <a href="https://github.com/Kenshiro06" target="_blank" class="social-icon"><i class="fab fa-github"></i></a>
+                            <a href="https://www.linkedin.com/in/akmal-danish-13555331b/?skipRedirect=true" target="_blank" class="social-icon"><i class="fab fa-linkedin"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <h2 class="section-title fade-in">About Me</h2>
+            <div class="about-content glass-effect fade-in">
+                <p class="about-text">
+                    Hello! I'm a passionate developer and designer with a love for creating beautiful,
+                    functional web experiences. I specialize in front-end development and UI/UX design,
+                    always striving to blend aesthetics with usability. My goal is to craft digital
+                    solutions that not only look great but also solve real-world problems.
+                </p>
+                <p class="about-text">
+                    When I'm not coding, you can find me exploring new technologies, contributing to
+                    open-source projects, or enjoying a good cup of coffee while sketching new design ideas.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="education-section">
+        <div class="container">
+            <h2 class="section-title fade-in">Education</h2>
+            <div class="education-grid">
+                <!-- Timeline/Connector Line (Visual only) -->
+                <div class="timeline-connector"></div>
+
+                <div class="education-card glass-effect fade-in">
+                    <div class="education-icon">
+                        <i class="fas fa-university"></i>
+                    </div>
+                    <div class="education-content">
+                        <h3>Bachelor of Information Systems (Hons.) Intelligent Systems Engineering</h3>
+                        <p class="institution">Universiti Teknologi MARA (UiTM) Shah Alam</p>
+                        <p class="year">2026 - Present</p>
+                        <p class="description">Specialising in Information Systems Engineering, Artificial Intelligence, and Machine Learning.</p>
+                    </div>
+                </div>
+
+                <div class="education-card glass-effect fade-in">
+                    <div class="education-icon">
+                        <i class="fas fa-university"></i>
+                    </div>
+                    <div class="education-content">
+                        <h3>Diploma in Computer Science</h3>
+                        <p class="institution">Universiti Teknologi MARA (UITM) KAMPUS JASIN</p>
+                        <p class="year">2023 - 2026</p>
+                        <p class="description">Fundamental programming, database management, and networking.</p>
+                    </div>
+                </div>
+
+                <div class="education-card glass-effect fade-in">
+                    <div class="education-icon">
+                        <i class="fas fa-school"></i>
+                    </div>
+                    <div class="education-content">
+                        <h3>Technical High School</h3>
+                        <p class="institution">Sekolah Menengah Teknik Tuanku Ja'afar</p>
+                        <p class="year">2021 - 2023</p>
+                        <p class="description">Learning Mechanical and Lukisan Kejuruteraan Basics in High School.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills-section">
+        <div class="container">
+            <h2 class="section-title fade-in">Skills & Expertise</h2>
+            <div class="skills-grid">
+                <div class="skill-card glass-effect fade-in">
+                    <i class="fas fa-code skill-icon"></i>
+                    <h3>C & C++</h3>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 90%"></div>
+                    </div>
+                </div>
+                <div class="skill-card glass-effect fade-in">
+                    <i class="fab fa-python skill-icon"></i>
+                    <h3>Python</h3>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 85%"></div>
+                    </div>
+                </div>
+                <div class="skill-card glass-effect fade-in">
+                    <i class="fab fa-js skill-icon"></i>
+                    <h3>JavaScript</h3>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 90%"></div>
+                    </div>
+                </div>
+                <div class="skill-card glass-effect fade-in">
+                    <i class="fab fa-php skill-icon"></i>
+                    <h3>PHP</h3>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 80%"></div>
+                    </div>
+                </div>
+                <div class="skill-card glass-effect fade-in">
+                    <i class="fas fa-database skill-icon"></i>
+                    <h3>Supabase</h3>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 85%"></div>
+                    </div>
+                </div>
+                <div class="skill-card glass-effect fade-in">
+                    <i class="fas fa-cloud skill-icon"></i>
+                    <h3>Supabase Cloud</h3>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 80%"></div>
+                    </div>
+                </div>
+                <div class="skill-card glass-effect fade-in">
+                    <i class="fas fa-cogs skill-icon"></i>
+                    <h3>n8n Automation</h3>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 80%"></div>
+                    </div>
+                </div>
+                <div class="skill-card glass-effect fade-in">
+                    <i class="fas fa-brain skill-icon"></i>
+                    <h3>Machine Learning</h3>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 75%"></div>
+                    </div>
+                </div>
+                <div class="skill-card glass-effect fade-in">
+                    <i class="fas fa-database skill-icon"></i>
+                    <h3>MySQL</h3>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 85%"></div>
+                    </div>
+                </div>
+                <div class="skill-card glass-effect fade-in">
+                    <i class="fab fa-html5 skill-icon"></i>
+                    <h3>HTML</h3>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 95%"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects-section">
+        <div class="container">
+            <h2 class="section-title fade-in">Our Projects</h2>
+            <div class="projects-content fade-in">
+                <p class="projects-description">
+                    Explore our collection of innovative projects that showcase creativity,
+                    technical expertise, and problem-solving skills. Each project represents
+                    a unique challenge and learning experience.
+                </p>
+                <a href="projects.html" class="project-button glow-button" role="button">
+                    <span class="button-text">View All Projects</span>
+                    <i class="fas fa-arrow-right button-icon"></i>
+                    <div class="button-ripple"></div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <h2 class="section-title fade-in">Get In Touch</h2>
+            <div class="contact-grid">
+                <div class="contact-card glass-effect fade-in">
+                    <div class="contact-icon-wrapper">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <h3>Email</h3>
+                    <p><a href="mailto:akmaldnisy@gmail.com"
+                            style="color: inherit; text-decoration: none;">akmaldnisy@gmail.com</a></p>
+                </div>
+                <div class="contact-card glass-effect fade-in">
+                    <div class="contact-icon-wrapper">
+                        <i class="fas fa-phone"></i>
+                    </div>
+                    <h3>Phone</h3>
+                    <p><a href="tel:0103103845" style="color: inherit; text-decoration: none;">010-310-3845</a></p>
+                </div>
+                <div class="contact-card glass-effect fade-in">
+                    <div class="contact-icon-wrapper">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <h3>Location</h3>
+                    <p>Negeri Sembilan, Malaysia</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; Akmal Danish Portfolio. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
