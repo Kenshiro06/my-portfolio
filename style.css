@@ -947,14 +947,17 @@ section {
 @media (max-width: 768px) {
     .navbar {
         padding: 0.4rem 0.8rem;
+        top: 12px;
+        width: calc(100% - 80px);
+        justify-content: center;
     }
 
     .nav-menu {
-        gap: 0.2rem;
+        gap: 0.1rem;
     }
 
     .nav-link {
-        padding: 0.6rem 0.8rem;
+        padding: 0.6rem 0.7rem;
     }
 
     .nav-text {
@@ -971,33 +974,139 @@ section {
         left: 20px;
     }
 
+    /* Hero / Profile Card */
+    .hero-section {
+        padding: 100px 16px 40px;
+    }
+
+    .profile-card-container {
+        width: 100%;
+        max-width: 360px;
+        height: 680px;
+        padding: 1rem;
+    }
+
+    #lanyard-canvas {
+        width: 100%;
+        height: 100%;
+    }
+
+    .profile-card {
+        padding: 2.5rem 1.5rem;
+        max-width: 320px;
+    }
+
+    .profile-image-wrapper {
+        width: 130px;
+        height: 130px;
+        margin-bottom: 1.5rem;
+    }
+
     .profile-name {
-        font-size: 2rem;
+        font-size: 1.1rem;
+        letter-spacing: 0.5px;
     }
 
+    .profile-title {
+        font-size: 0.75rem;
+        letter-spacing: 1px;
+        margin-bottom: 1.5rem;
+    }
+
+    .social-links {
+        gap: 0.6rem;
+    }
+
+    .social-icon {
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
+    }
+
+    /* Section titles */
     .section-title {
+        font-size: 1.8rem;
+        margin-bottom: 2rem;
+    }
+
+    section {
+        padding: 60px 16px;
+    }
+
+    /* About */
+    .about-content {
+        padding: 1.5rem;
+    }
+
+    .about-text {
+        font-size: 1rem;
+    }
+
+    /* Education */
+    .education-grid {
+        padding-left: 0;
+        gap: 1.5rem;
+    }
+
+    .timeline-connector {
+        display: none;
+    }
+
+    .education-card {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 1.5rem;
+        gap: 1rem;
+    }
+
+    .education-card h3 {
+        font-size: 1.1rem;
+    }
+
+    /* Skills */
+    .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+
+    .skill-card {
+        padding: 1.2rem;
+    }
+
+    .skill-icon {
         font-size: 2rem;
     }
 
-    .education-grid,
-    .skills-grid,
+    .skill-card h3 {
+        font-size: 0.9rem;
+    }
+
+    /* Contact */
     .contact-grid {
         grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .contact-card {
+        padding: 1.5rem;
+    }
+
+    /* Projects button */
+    .project-button {
+        padding: 1rem 2rem;
+        font-size: 1rem;
     }
 }
 
 @media (max-width: 480px) {
     .navbar {
-        padding: 0.3rem 0.6rem;
-        top: 15px;
-    }
-
-    .nav-menu {
-        gap: 0.1rem;
+        padding: 0.3rem 0.5rem;
+        top: 10px;
+        width: calc(100% - 60px);
     }
 
     .nav-link {
-        padding: 0.5rem 0.6rem;
+        padding: 0.5rem 0.55rem;
     }
 
     .nav-icon {
@@ -1011,16 +1120,62 @@ section {
         left: 15px;
     }
 
+    .profile-card-container {
+        max-width: 310px;
+        height: 620px;
+    }
+
+    .profile-card {
+        padding: 2rem 1.2rem;
+        max-width: 280px;
+    }
+
     .profile-image-wrapper {
-        width: 150px;
-        height: 150px;
+        width: 110px;
+        height: 110px;
+        margin-bottom: 1.2rem;
     }
 
     .profile-name {
-        font-size: 1.8rem;
+        font-size: 0.95rem;
     }
 
     .profile-title {
+        font-size: 0.65rem;
+        margin-bottom: 1.2rem;
+    }
+
+    .section-title {
+        font-size: 1.5rem;
+    }
+
+    .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.8rem;
+    }
+
+    .skill-card {
+        padding: 1rem;
+    }
+
+    .education-card h3 {
         font-size: 1rem;
+    }
+
+    .about-text {
+        font-size: 0.95rem;
+    }
+}
+
+/* Touch devices — disable hover transforms that feel janky on mobile */
+@media (hover: none) {
+    .glass-effect:hover {
+        transform: none;
+    }
+    .education-card:hover {
+        transform: none !important;
+    }
+    .social-icon:hover {
+        transform: none;
     }
 }

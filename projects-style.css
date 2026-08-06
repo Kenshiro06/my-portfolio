@@ -565,6 +565,7 @@
     .project-card {
         grid-template-columns: 1fr;
         gap: 2rem;
+        padding: 2rem;
     }
     .project-card.reverse .project-visual { order: 0; }
     .project-card.reverse .project-info   { order: 0; }
@@ -572,14 +573,101 @@
     .hero-title { font-size: 2.8rem; }
     .project-name { font-size: 1.6rem; }
     .hero-stats { gap: 1.2rem; padding: 1rem 1.5rem; }
+
+    .projects-list { gap: 3rem; }
 }
 
 @media (max-width: 600px) {
-    .projects-hero { padding: 130px 20px 60px; }
-    .hero-title { font-size: 2.2rem; }
-    .hero-subtitle { font-size: 1rem; }
-    .project-card { padding: 1.8rem; }
-    .project-name { font-size: 1.4rem; }
-    .hero-stats { flex-direction: column; gap: 0.8rem; }
-    .stat-divider { width: 60px; height: 1px; }
+    .projects-hero {
+        padding: 110px 16px 50px;
+        min-height: auto;
+    }
+
+    .hero-badge {
+        font-size: 0.78rem;
+        padding: 0.4rem 1rem;
+    }
+
+    .hero-title { font-size: 2rem; }
+    .hero-subtitle { font-size: 0.95rem; margin-bottom: 1.8rem; }
+
+    .hero-stats {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.8rem 1.5rem;
+        padding: 0.8rem 1.2rem;
+    }
+
+    .stat-divider { display: none; }
+    .stat-number { font-size: 1.4rem; }
+    .stat-label  { font-size: 0.72rem; }
+
+    .projects-showcase {
+        padding: 20px 16px 60px;
+    }
+
+    .projects-list { gap: 2.5rem; }
+
+    .project-card {
+        padding: 1.5rem;
+        border-radius: 20px;
+        gap: 1.5rem;
+    }
+
+    .project-card::before {
+        font-size: 5rem;
+        top: -10px;
+        right: 15px;
+    }
+
+    /* Mockup - shrink on mobile */
+    .project-mockup {
+        max-width: 100%;
+    }
+
+    .browser-content {
+        min-height: 160px;
+        padding: 1rem;
+    }
+
+    .mock-header { font-size: 0.85rem; }
+
+    /* n8n mockup adjustments */
+    .workflow-node { min-width: 48px; padding: 0.4rem; }
+    .workflow-node i { font-size: 1rem; }
+    .workflow-node span { font-size: 0.5rem; }
+
+    .project-number { font-size: 0.7rem; }
+    .project-category { font-size: 0.75rem; }
+    .project-name { font-size: 1.3rem; }
+    .project-desc { font-size: 0.9rem; }
+
+    .highlight-item { font-size: 0.82rem; }
+
+    .project-tech { gap: 0.4rem; }
+    .tech-badge { font-size: 0.72rem; padding: 0.28rem 0.7rem; }
+
+    .project-actions { flex-direction: column; gap: 0.7rem; }
+    .btn-primary, .btn-secondary {
+        justify-content: center;
+        padding: 0.8rem 1.5rem;
+        font-size: 0.88rem;
+    }
+
+    .back-section { padding: 30px 16px 60px; }
+    .back-button  { padding: 0.9rem 2rem; font-size: 0.9rem; }
+}
+
+@media (max-width: 380px) {
+    .hero-title { font-size: 1.7rem; }
+    .project-name { font-size: 1.15rem; }
+    .project-card { padding: 1.2rem; }
+
+    /* Jawi converter mock — stack on tiny screens */
+    .jawi-converter-mock {
+        flex-direction: column;
+        gap: 0.4rem;
+    }
+    .mock-arrow { transform: rotate(90deg); }
 }
