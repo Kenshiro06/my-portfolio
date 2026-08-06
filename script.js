@@ -236,6 +236,8 @@ document.querySelectorAll('.glass-effect:not(.profile-card)').forEach(card => {
 
         // ── Touch Events ──
         card.addEventListener('touchstart', (e) => {
+            // Don't hijack taps on links inside the card
+            if (e.target.closest('a')) return;
             physics.isDragging = true;
             const touch = e.touches[0];
             const rect = card.getBoundingClientRect();
@@ -254,7 +256,7 @@ document.querySelectorAll('.glass-effect:not(.profile-card)').forEach(card => {
             e.preventDefault();
         }, { passive: false });
 
-        window.addEventListener('touchend', () => {
+        window.addEventListener('touchend', (e) => {
             if (physics.isDragging) {
                 physics.isDragging = false;
             }

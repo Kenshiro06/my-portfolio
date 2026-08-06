@@ -624,6 +624,8 @@ body {
     display: flex;
     gap: 1rem;
     justify-content: center;
+    position: relative;
+    z-index: 20;
 }
 
 .social-icon {
@@ -638,6 +640,11 @@ body {
     text-decoration: none;
     font-size: 1.2rem;
     transition: var(--transition);
+    position: relative;
+    z-index: 20;
+    /* Larger touch target on mobile */
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
 }
 
 .social-icon:hover {
