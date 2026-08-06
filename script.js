@@ -191,7 +191,7 @@ document.querySelectorAll('.glass-effect:not(.profile-card)').forEach(card => {
     if (card && container && canvas && ctx) {
 
         let physics = {
-            x: 0, // Offset from center
+            x: 0,
             y: 0,
             vx: 0,
             vy: 0,
@@ -202,14 +202,6 @@ document.querySelectorAll('.glass-effect:not(.profile-card)').forEach(card => {
             dragStartY: 0
         };
 
-        const config = {
-            tension: 0.1,    // Spring tension
-            friction: 0.9,   // Velocity decay
-            gravity: 0,      // Gravity (0 for simpler center-pull spring, or high for pendulum)
-            // Let's rely on tension to pull back to center (0,0) like a springy string
-            stringLength: 100
-        };
-
         // Resize canvas to match container
         function resizeCanvas() {
             canvas.width = container.offsetWidth;
@@ -218,127 +210,107 @@ document.querySelectorAll('.glass-effect:not(.profile-card)').forEach(card => {
         window.addEventListener('resize', resizeCanvas);
         resizeCanvas();
 
-        // Mouse Events
+        // ── Mouse Events ──
         card.addEventListener('mousedown', (e) => {
             physics.isDragging = true;
-            // Calculate offset of mouse from card center to keep relative position
             const rect = card.getBoundingClientRect();
-            const cardCenterX = rect.left + rect.width / 2;
-            const cardCenterY = rect.top + rect.height / 2;
-            physics.dragStartX = e.clientX - cardCenterX;
-            physics.dragStartY = e.clientY - cardCenterY;
-
+            physics.dragStartX = e.clientX - (rect.left + rect.width / 2);
+            physics.dragStartY = e.clientY - (rect.top + rect.height / 2);
             card.style.transition = 'none';
             card.style.cursor = 'grabbing';
         });
 
         window.addEventListener('mousemove', (e) => {
-            if (physics.isDragging) {
-                const rect = container.getBoundingClientRect();
-                const containerCenterX = rect.left + rect.width / 2;
-                const containerCenterY = rect.top + rect.height / 2;
-
-                // Mouse position relative to container center
-                let targetX = e.clientX - containerCenterX;
-                let targetY = e.clientY - containerCenterY;
-
-                // Adjust by the drag start offset so card doesn't jump to mouse center
-                // But generally users want to grab the point they clicked. 
-                // For simplicity, let's just track the mouse directly gives a "magnetic" feel
-                // Or better:
-                physics.x = targetX;
-                physics.y = targetY;
-            }
+            if (!physics.isDragging) return;
+            const rect = container.getBoundingClientRect();
+            physics.x = e.clientX - (rect.left + rect.width / 2);
+            physics.y = e.clientY - (rect.top + rect.height / 2);
         });
 
         window.addEventListener('mouseup', () => {
             if (physics.isDragging) {
                 physics.isDragging = false;
                 card.style.cursor = 'grab';
-                // Give it a little release flick? 
-                // Velocity is inferred from previous frames in a real engine 
-                // but here we just let spring take over from current Pos.
             }
         });
 
-        // Loop
+        // ── Touch Events ──
+        card.addEventListener('touchstart', (e) => {
+            physics.isDragging = true;
+            const touch = e.touches[0];
+            const rect = card.getBoundingClientRect();
+            physics.dragStartX = touch.clientX - (rect.left + rect.width / 2);
+            physics.dragStartY = touch.clientY - (rect.top + rect.height / 2);
+            card.style.transition = 'none';
+            e.preventDefault();
+        }, { passive: false });
+
+        window.addEventListener('touchmove', (e) => {
+            if (!physics.isDragging) return;
+            const touch = e.touches[0];
+            const rect = container.getBoundingClientRect();
+            physics.x = touch.clientX - (rect.left + rect.width / 2);
+            physics.y = touch.clientY - (rect.top + rect.height / 2);
+            e.preventDefault();
+        }, { passive: false });
+
+        window.addEventListener('touchend', () => {
+            if (physics.isDragging) {
+                physics.isDragging = false;
+            }
+        });
+
+        // ── Animation Loop ──
         function animate() {
             if (!physics.isDragging) {
-                // Spring force to return to (0,0)
-                // We use a stronger tension for "snappy" return but good damping
                 const tension = 0.05;
                 const friction = 0.92;
 
-                const ax = -tension * physics.x;
-                const ay = -tension * physics.y;
-
-                physics.vx += ax;
-                physics.vy += ay;
-
+                physics.vx += -tension * physics.x;
+                physics.vy += -tension * physics.y;
                 physics.vx *= friction;
                 physics.vy *= friction;
-
                 physics.x += physics.vx;
                 physics.y += physics.vy;
 
-                // Stop micro-movements
-                if (Math.abs(physics.vx) < 0.01 && Math.abs(physics.vy) < 0.01 && Math.abs(physics.x) < 0.1 && Math.abs(physics.y) < 0.1) {
-                    physics.vx = 0; physics.vy = 0; // physics.x = 0; physics.y = 0;
+                if (Math.abs(physics.vx) < 0.01 && Math.abs(physics.vy) < 0.01 &&
+                    Math.abs(physics.x) < 0.1 && Math.abs(physics.y) < 0.1) {
+                    physics.vx = 0; physics.vy = 0;
                 }
             } else {
                 physics.vx = 0;
                 physics.vy = 0;
             }
 
-            // Sway Angle logic
             const targetAngle = -physics.x * 0.1;
             physics.vAngle += (targetAngle - physics.angle) * 0.1;
             physics.vAngle *= 0.9;
             physics.angle += physics.vAngle;
 
-            // Apply Transform
             const rotateX = -physics.y * 0.05;
             card.style.transform = `translate(calc(-50% + ${physics.x}px), calc(-50% + ${physics.y}px)) rotate(${physics.angle}deg) rotateX(${rotateX}deg)`;
 
-            // Draw String
+            // ── Draw String ──
             if (ctx && canvas.width > 0) {
                 const anchorX = canvas.width / 2;
                 const anchorY = 0;
+                const centerX = canvas.width / 2;
+                const centerY = canvas.height / 2;
+                const cardX = centerX + physics.x;
+                const cardY = centerY + physics.y;
+                const rad = physics.angle * Math.PI / 180;
+                const cardHeight = card.offsetHeight || 400;
+                const clipLocalY = -(cardHeight / 2 + 15);
+                const clipWorldX = cardX + (-clipLocalY * Math.sin(rad));
+                const clipWorldY = cardY + (clipLocalY * Math.cos(rad));
 
                 ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-                const centerX = canvas.width / 2;
-                const centerY = canvas.height / 2;
+                const stringColor = getComputedStyle(document.documentElement)
+                    .getPropertyValue('--text-color').trim() || '#4b5563';
+                const accentColor = getComputedStyle(document.documentElement)
+                    .getPropertyValue('--primary-color').trim() || '#4f46e5';
 
-                const cardX = centerX + physics.x;
-                const cardY = centerY + physics.y;
-
-                const rad = physics.angle * Math.PI / 180;
-                // Clip/String Attachment Point relative to card center
-                // It is at the top of the card + a bit up for the clip loop
-                // CSS top is -20px. Card height ~500px.
-                // Center to Top = 250px. 
-                // Loop is at roughly Y = -260px in local space
-
-                const clipLocalX = 0;
-                // We need to measure exact height for perfect alignment, but approximation is fine for visual
-                const cardHeight = card.offsetHeight || 500;
-                const clipLocalY = -(cardHeight / 2 + 15);
-
-                const clipWorldX = cardX + (clipLocalX * Math.cos(rad) - clipLocalY * Math.sin(rad));
-                const clipWorldY = cardY + (clipLocalX * Math.sin(rad) + clipLocalY * Math.cos(rad));
-
-                // --- Detailed Lanyard String ---
-                const stringColor = getComputedStyle(document.documentElement).getPropertyValue('--text-color').trim() || '#4b5563';
-                const accentColor = getComputedStyle(document.documentElement).getPropertyValue('--primary-color').trim() || '#4f46e5';
-
-                // 1. Draw Double-Braided String
-                ctx.beginPath();
-                ctx.lineWidth = 4;
-                ctx.lineCap = 'round';
-                ctx.lineJoin = 'round';
-
-                // Create a gradient for the string
                 const gradient = ctx.createLinearGradient(anchorX, anchorY, clipWorldX, clipWorldY);
                 gradient.addColorStop(0, stringColor);
                 gradient.addColorStop(0.5, accentColor);
@@ -346,49 +318,41 @@ document.querySelectorAll('.glass-effect:not(.profile-card)').forEach(card => {
 
                 ctx.strokeStyle = gradient;
                 ctx.globalAlpha = 0.8;
+                ctx.lineWidth = 4;
+                ctx.lineCap = 'round';
 
-                // Draw two paths slightly offset to look like a thick braided lanyard
                 const offset = 2;
-
-                // Left strand
                 ctx.beginPath();
                 ctx.moveTo(anchorX - offset, anchorY);
                 ctx.quadraticCurveTo(anchorX - offset, (anchorY + clipWorldY) / 2, clipWorldX - offset, clipWorldY);
                 ctx.stroke();
 
-                // Right strand
                 ctx.beginPath();
                 ctx.moveTo(anchorX + offset, anchorY);
                 ctx.quadraticCurveTo(anchorX + offset, (anchorY + clipWorldY) / 2, clipWorldX + offset, clipWorldY);
                 ctx.stroke();
 
-                // 2. Draw Connection "Knot" or Metal Crimp
                 ctx.globalAlpha = 1.0;
-                ctx.fillStyle = '#94a3b8'; // Silver/Metal color
+                ctx.fillStyle = '#94a3b8';
                 ctx.beginPath();
-                // A small rectangle/rounded box for the metal crimp
                 ctx.roundRect(clipWorldX - 6, clipWorldY - 12, 12, 10, 2);
                 ctx.fill();
                 ctx.strokeStyle = 'rgba(0,0,0,0.2)';
                 ctx.lineWidth = 1;
                 ctx.stroke();
 
-                // 3. Draw Detailed Clip Circle (The Ring)
                 ctx.strokeStyle = '#64748b';
                 ctx.lineWidth = 3;
                 ctx.beginPath();
                 ctx.arc(clipWorldX, clipWorldY, 6, 0, Math.PI * 2);
                 ctx.stroke();
 
-                // Inner shine on the ring
                 ctx.strokeStyle = '#f8fafc';
                 ctx.lineWidth = 1;
                 ctx.beginPath();
                 ctx.arc(clipWorldX - 1, clipWorldY - 1, 3, 0, Math.PI);
                 ctx.stroke();
             }
-
-
 
             requestAnimationFrame(animate);
         }
