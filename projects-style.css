@@ -564,7 +564,7 @@
 @media (max-width: 900px) {
     .project-card {
         grid-template-columns: 1fr;
-        gap: 2rem;
+        gap: 1.8rem;
         padding: 2rem;
     }
     .project-card.reverse .project-visual { order: 0; }
@@ -573,101 +573,138 @@
     .hero-title { font-size: 2.8rem; }
     .project-name { font-size: 1.6rem; }
     .hero-stats { gap: 1.2rem; padding: 1rem 1.5rem; }
-
     .projects-list { gap: 3rem; }
 }
 
 @media (max-width: 600px) {
     .projects-hero {
-        padding: 110px 16px 50px;
+        padding: 100px 16px 40px;
         min-height: auto;
     }
 
     .hero-badge {
-        font-size: 0.78rem;
+        font-size: 0.75rem;
         padding: 0.4rem 1rem;
+        margin-bottom: 1rem;
     }
 
-    .hero-title { font-size: 2rem; }
-    .hero-subtitle { font-size: 0.95rem; margin-bottom: 1.8rem; }
+    .hero-title {
+        font-size: 1.9rem;
+        margin-bottom: 0.8rem;
+    }
 
+    .hero-subtitle {
+        font-size: 0.9rem;
+        margin-bottom: 1.5rem;
+    }
+
+    /* Stats — horizontal scroll if needed, no wrap break */
     .hero-stats {
+        display: flex;
         flex-direction: row;
-        flex-wrap: wrap;
         justify-content: center;
-        gap: 0.8rem 1.5rem;
+        gap: 1rem;
         padding: 0.8rem 1.2rem;
-    }
-
-    .stat-divider { display: none; }
-    .stat-number { font-size: 1.4rem; }
-    .stat-label  { font-size: 0.72rem; }
-
-    .projects-showcase {
-        padding: 20px 16px 60px;
-    }
-
-    .projects-list { gap: 2.5rem; }
-
-    .project-card {
-        padding: 1.5rem;
-        border-radius: 20px;
-        gap: 1.5rem;
-    }
-
-    .project-card::before {
-        font-size: 5rem;
-        top: -10px;
-        right: 15px;
-    }
-
-    /* Mockup - shrink on mobile */
-    .project-mockup {
+        width: auto;
         max-width: 100%;
     }
 
+    .stat-divider { display: none; }
+    .stat-number { font-size: 1.3rem; }
+    .stat-label  { font-size: 0.68rem; }
+
+    /* Showcase */
+    .projects-showcase { padding: 16px 12px 50px; }
+    .projects-list { gap: 2rem; }
+
+    .project-card {
+        padding: 1.2rem;
+        border-radius: 18px;
+        gap: 1.2rem;
+    }
+
+    .project-card::before {
+        font-size: 4.5rem;
+        top: -8px;
+        right: 12px;
+    }
+
+    /* Mockup browser */
+    .project-mockup { max-width: 100%; }
+
+    .browser-bar {
+        padding: 8px 10px;
+    }
+    .dot { width: 8px; height: 8px; }
+    .browser-url { font-size: 0.62rem; }
+
     .browser-content {
-        min-height: 160px;
-        padding: 1rem;
+        min-height: 140px;
+        padding: 0.8rem;
     }
 
-    .mock-header { font-size: 0.85rem; }
+    /* Bakery */
+    .bakery-content .mock-hero-img { font-size: 2.2rem; margin: 0.4rem 0; }
+    .mock-header { font-size: 0.82rem !important; }
 
-    /* n8n mockup adjustments */
-    .workflow-node { min-width: 48px; padding: 0.4rem; }
-    .workflow-node i { font-size: 1rem; }
-    .workflow-node span { font-size: 0.5rem; }
+    /* MedAI scan */
+    .scan-circle { width: 55px; height: 55px; font-size: 1.4rem; }
+    .ring-1 { width: 50px; height: 50px; }
+    .ring-2 { width: 65px; height: 65px; }
+    .ring-3 { width: 80px; height: 80px; }
 
-    .project-number { font-size: 0.7rem; }
-    .project-category { font-size: 0.75rem; }
-    .project-name { font-size: 1.3rem; }
-    .project-desc { font-size: 0.9rem; }
+    /* n8n */
+    .workflow-node { min-width: 44px; padding: 0.35rem; }
+    .workflow-node i { font-size: 0.9rem; }
+    .workflow-node span { font-size: 0.48rem; }
+    .workflow-arrow { font-size: 0.8rem; }
 
-    .highlight-item { font-size: 0.82rem; }
+    /* Jawi */
+    .jawi-converter-mock { gap: 0.4rem; }
+    .mock-typed  { font-size: 0.65rem; }
+    .mock-jawi-text { font-size: 0.75rem; }
 
-    .project-tech { gap: 0.4rem; }
-    .tech-badge { font-size: 0.72rem; padding: 0.28rem 0.7rem; }
+    /* Project info text */
+    .project-number   { font-size: 0.68rem; }
+    .project-category { font-size: 0.72rem; }
+    .project-name     { font-size: 1.25rem; margin-bottom: 0.6rem; }
+    .project-desc     { font-size: 0.875rem; margin-bottom: 1rem; line-height: 1.7; }
 
-    .project-actions { flex-direction: column; gap: 0.7rem; }
-    .btn-primary, .btn-secondary {
+    .project-highlights { gap: 0.4rem; margin-bottom: 1rem; }
+    .highlight-item     { font-size: 0.8rem; }
+
+    .project-tech  { gap: 0.35rem; margin-bottom: 1.2rem; }
+    .tech-badge    { font-size: 0.7rem; padding: 0.25rem 0.6rem; }
+
+    /* Buttons — full width stacked */
+    .project-actions {
+        flex-direction: column;
+        gap: 0.6rem;
+    }
+    .btn-primary,
+    .btn-secondary {
         justify-content: center;
-        padding: 0.8rem 1.5rem;
-        font-size: 0.88rem;
+        width: 100%;
+        padding: 0.85rem 1rem;
+        font-size: 0.875rem;
     }
 
-    .back-section { padding: 30px 16px 60px; }
-    .back-button  { padding: 0.9rem 2rem; font-size: 0.9rem; }
+    .back-section { padding: 24px 16px 50px; }
+    .back-button  { padding: 0.85rem 1.8rem; font-size: 0.88rem; width: 100%; justify-content: center; }
 }
 
 @media (max-width: 380px) {
-    .hero-title { font-size: 1.7rem; }
-    .project-name { font-size: 1.15rem; }
-    .project-card { padding: 1.2rem; }
+    .hero-title   { font-size: 1.6rem; }
+    .project-name { font-size: 1.1rem; }
+    .project-card { padding: 1rem; }
+    .hero-stats   { gap: 0.7rem; padding: 0.7rem 0.9rem; }
+    .stat-number  { font-size: 1.1rem; }
 
-    /* Jawi converter mock — stack on tiny screens */
+    /* Jawi converter mock — stack vertically on tiny screens */
     .jawi-converter-mock {
         flex-direction: column;
-        gap: 0.4rem;
+        align-items: stretch;
+        gap: 0.35rem;
     }
-    .mock-arrow { transform: rotate(90deg); }
+    .mock-arrow { transform: rotate(90deg); text-align: center; }
 }

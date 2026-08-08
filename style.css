@@ -7,6 +7,8 @@
     --text-light: #6b7280;
     --bg-color: #f3f4f6;
     --card-bg: rgba(255, 255, 255, 0.85);
+    --glass-bg: rgba(255, 255, 255, 0.7);
+    --glass-border: rgba(255, 255, 255, 0.4);
     --lanyard-card-bg: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(240, 244, 255, 0.9));
     --lanyard-card-text: #1f2937;
     --lanyard-card-border: rgba(79, 70, 229, 0.2);
@@ -20,6 +22,8 @@
     --text-light: #94a3b8;
     --bg-color: #0f172a;
     --card-bg: rgba(30, 41, 59, 0.7);
+    --glass-bg: rgba(30, 41, 59, 0.6);
+    --glass-border: rgba(255, 255, 255, 0.08);
     --lanyard-card-bg: linear-gradient(135deg, rgba(15, 23, 42, 0.95), rgba(30, 41, 59, 0.98));
     --lanyard-card-text: #ffffff;
     --lanyard-card-border: rgba(255, 255, 255, 0.1);
