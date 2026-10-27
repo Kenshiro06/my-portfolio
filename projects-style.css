@@ -178,6 +178,8 @@
 .card-glow.glow-purple { background: #a855f7; }
 .card-glow.glow-green  { background: #10b981; }
 .card-glow.glow-orange { background: #ff7043; }
+.card-glow.glow-brew   { background: #c2773a; }
+.card-glow.glow-chess  { background: #6366f1; }
 
 /* ===== Project Visual / Mockup ===== */
 .project-visual {
@@ -707,4 +709,147 @@
         gap: 0.35rem;
     }
     .mock-arrow { transform: rotate(90deg); text-align: center; }
+}
+
+/* ===== Brewly Cafe Mockup ===== */
+.brewly-content { background: linear-gradient(160deg, #1a0d00, #2e1800); }
+.brewly-header  { font-size: 1rem; font-weight: 700; color: #d4843a; margin-bottom: 0.7rem; }
+
+.brewly-menu-mock {
+    display: flex;
+    gap: 0.4rem;
+    margin-bottom: 0.7rem;
+}
+.brew-category {
+    font-size: 0.6rem;
+    padding: 0.2rem 0.55rem;
+    border-radius: 20px;
+    border: 1px solid rgba(212,132,58,0.3);
+    color: rgba(255,255,255,0.45);
+    font-weight: 500;
+}
+.brew-category.active-cat {
+    background: rgba(212,132,58,0.2);
+    border-color: rgba(212,132,58,0.6);
+    color: #d4843a;
+}
+
+.brewly-cards {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 0.8rem;
+}
+.brew-card {
+    flex: 1;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(212,132,58,0.2);
+    border-radius: 10px;
+    padding: 0.5rem 0.4rem;
+    text-align: center;
+}
+.brew-icon  { font-size: 1.4rem; line-height: 1; margin-bottom: 0.2rem; }
+.brew-name  { font-size: 0.6rem; color: rgba(255,255,255,0.75); margin-bottom: 0.15rem; }
+.brew-price { font-size: 0.6rem; color: #d4843a; font-weight: 700; }
+
+.brew-cart-bar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.4rem 0.8rem;
+    background: linear-gradient(135deg, #c2773a, #d4843a);
+    border-radius: 20px;
+    font-size: 0.65rem;
+    color: #fff;
+    font-weight: 600;
+}
+
+/* Brewly outline button */
+.btn-secondary.btn-brew-outline {
+    color: #d4843a;
+    border-color: #d4843a;
+}
+.btn-secondary.btn-brew-outline:hover {
+    background: #d4843a;
+    color: white;
+    box-shadow: 0 10px 25px rgba(212,132,58,0.35);
+}
+
+/* ===== Neural Chess AI Mockup ===== */
+.chess-content { background: linear-gradient(160deg, #080814, #0e0e28); }
+.chess-header  { font-size: 1rem; font-weight: 700; color: #818cf8; margin-bottom: 0.7rem; }
+
+.chess-opponent-select { margin-bottom: 0.75rem; }
+.opp-label {
+    font-size: 0.58rem;
+    color: rgba(255,255,255,0.4);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 0.45rem;
+}
+.opp-cards { display: flex; gap: 0.45rem; }
+.opp-card {
+    flex: 1;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(129,140,248,0.2);
+    border-radius: 8px;
+    padding: 0.4rem 0.3rem;
+    text-align: center;
+    transition: all 0.2s;
+}
+.opp-card.active-opp {
+    background: rgba(129,140,248,0.15);
+    border-color: rgba(129,140,248,0.6);
+}
+.opp-avatar { font-size: 1rem; line-height: 1; margin-bottom: 0.2rem; }
+.opp-name   { font-size: 0.55rem; color: rgba(255,255,255,0.65); font-weight: 500; }
+
+.chess-board-mini {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid rgba(129,140,248,0.25);
+    border-radius: 6px;
+    overflow: hidden;
+}
+.mini-row { display: flex; }
+.sq {
+    flex: 1;
+    aspect-ratio: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.85rem;
+    line-height: 1;
+}
+.sq.dark       { background: rgba(129,140,248,0.18); }
+.sq.light      { background: rgba(255,255,255,0.04); }
+.sq.highlight-sq { background: rgba(251,191,36,0.3); }
+
+/* Chess outline button */
+.btn-secondary.btn-chess-outline {
+    color: #818cf8;
+    border-color: #818cf8;
+}
+.btn-secondary.btn-chess-outline:hover {
+    background: #818cf8;
+    color: white;
+    box-shadow: 0 10px 25px rgba(129,140,248,0.35);
+}
+
+/* Chess engine tech badge */
+.tech-badge.chess-engine {
+    background: rgba(129,140,248,0.12);
+    color: #818cf8;
+    border-color: rgba(129,140,248,0.25);
+}
+
+/* ===== Responsive — new cards ===== */
+@media (max-width: 600px) {
+    .brewly-cards { gap: 0.35rem; }
+    .brew-icon { font-size: 1.1rem; }
+    .brew-name, .brew-price { font-size: 0.55rem; }
+
+    .opp-avatar { font-size: 0.85rem; }
+    .opp-name   { font-size: 0.48rem; }
+    .sq         { font-size: 0.7rem; }
 }
